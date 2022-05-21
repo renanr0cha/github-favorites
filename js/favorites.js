@@ -21,8 +21,6 @@ export class Favorites {
 
       const userExists = this.entries.find(entry => entry.login === username)
 
-      console.log(userExists)
-
       if(userExists) {
         throw new Error('Usuário já cadastrado')
       }
@@ -67,12 +65,20 @@ export class FavoritesView extends Favorites {
   onadd()  {
     const addButton = this.root.querySelector('.search button')
 
-    addButton.onclick = () => {
+    const input = this.root.querySelector('#input-search')
+
+    
+    addButton.addEventListener('click', () => {
       const { value } = this.root.querySelector('.search input')
 
       this.add(value)
-
-    }
+    })
+    input.addEventListener('keypress', (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault()
+        addButton.click()
+      }
+    })
   }
 
   update() {

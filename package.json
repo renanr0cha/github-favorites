@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "name": "github-favorites",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanrochadev/github-favorites.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renanrochadev/github-favorites/issues"
+  },
+  "homepage": "https://github.com/renanrochadev/github-favorites#readme",
+  "description": ""
+}

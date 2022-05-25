@@ -12,8 +12,12 @@ img {
 :root {
   font-size: 62.5%;
 
-  --ff-primary: 'Poppins', sans-serif;
+  --ff-primary: 'Roboto', sans-serif;
   --text-color: #303030;
+  --bg-color: #000000;
+  --bg-input: #06181C;
+  --bg-button: hsl(195, 91%, 25%);
+  --bg-button-hover: hsl(0, 0%, 100%);
 
   --hue: 194;
   --primary-color: hsl(var(--hue), 100%, 63%)
@@ -36,16 +40,12 @@ body {
   font-size: 1.6rem;
   color: var(--text-color);
   font-family: var(--ff-primary);
-  background-color: rgb(250, 254, 254);
-}
+  background-color: var(--bg-color);
 
-button {
-  background-color: var(--primary-color);
 }
 
 #app {
-  padding: 2rem;
-  max-width: 500px;
+  padding: 11.5rem 16rem;
   margin: 0 auto;
 }
 
@@ -53,20 +53,22 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-header h1 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  margin-block: 2.5rem;
+  min-width: 50rem;
+  gap: 8px;
+  margin-bottom: 8.7rem;
 }
 
 header #input-search {
-  height: 3.2rem;
-  border: 1px solid #ccc;
-  border-radius: 0.4rem 0 0 0.4rem;
-  padding: 0 0.8rem;
+  height: 4.8rem;
+  background-color: var(--bg-input);
+  border-radius: 5px;
+  border: none;
+  padding: 1.6rem;
   font-family: var(--ff-primary);
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+  min-width: fit-content;
 }
 
 .user img {
@@ -77,43 +79,66 @@ header #input-search {
 }
 
 header button {
-  background-color: var(--primary-color);
-  border-radius: 0 0.4rem 0.4rem 0;
-  height: 3.2rem;
+  background-color: var(--bg-button);
+  color: var(--bg-button-hover);
+  border-radius: 5px;
+  height: 4.8rem;
+
+  margin-left: 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
   border: none;
-  padding: 0 1rem;
+  padding: 1.2rem 3.2rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+header button:hover {
+  background-color: var(--bg-button-hover);
+  color: var(--bg-button);
+}
+
+header button:hover svg path {
+  fill: var(--bg-button);
 }
 
 .search {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 table {
+  min-width: 50rem;
   width: 100%;
   border-collapse: collapse;
-  box-shadow: 0 1rem 2rem -1rem rgb(0, 0, 0 / 30%);
+  border: 1px solid #4A808C;
+  height: 68.8rem;
 }
 
 table * {
   font-size: 1.4rem;
-  color: var(--text-color);
+  color: #E1E1E6;
 }
 
 table th {
-  background-color: var(--primary-color);
+  background-color: #092D38;
   text-align: left;
   font-weight: 400;
   padding: 1.5rem;
 }
 
 table tr:nth-child(odd) {
-  background: #ddd;
+  background: var(--bg-color);
+  border: 1px solid #4A808C;
 }
 
 table tr:nth-child(even) {
-  background: #eee;
+  background: var(--bg-color);
+  border: 1px solid #4A808C;
 }
 
 table th:first-child {

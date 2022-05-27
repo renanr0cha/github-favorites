@@ -58,9 +58,10 @@ header {
   margin-bottom: 8.7rem;
 }
 
-header #input-search {
+header .search #input-search {
   height: 4.8rem;
   background-color: var(--bg-input);
+  color: var(--bg-button-hover);
   border-radius: 5px;
   border: none;
   padding: 1.6rem;
@@ -68,7 +69,18 @@ header #input-search {
   font-size: 1.6rem;
   line-height: 1.6rem;
   font-weight: 400;
-  min-width: fit-content;
+}
+
+.search {
+  display: flex;
+  width: 45vw;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.search input {
+  width: 100%;
+  display: inline-block;
 }
 
 .user img {
@@ -84,7 +96,6 @@ header button {
   border-radius: 5px;
   height: 4.8rem;
 
-  margin-left: 8px;
   font-size: 1.4rem;
   font-weight: 700;
   border: none;
@@ -96,6 +107,10 @@ header button {
   gap: 8px;
 }
 
+.hide {
+  display: none;
+}
+
 header button:hover {
   background-color: var(--bg-button-hover);
   color: var(--bg-button);
@@ -105,48 +120,60 @@ header button:hover svg path {
   fill: var(--bg-button);
 }
 
-.search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.container {
+  border: 1px solid #4A808C;
+  border-radius: 1.2rem;
+  max-height: 54.2rem;
+  overflow: auto;
 }
-
 table {
   min-width: 50rem;
+  max-height: 54.2rem;
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #4A808C;
-  height: 68.8rem;
+  border-spacing: 0;
+  overflow-y: auto;
 }
 
 table * {
   font-size: 1.4rem;
   color: #E1E1E6;
+  font-weight: 700;
 }
 
 table th {
   background-color: #092D38;
   text-align: left;
-  font-weight: 400;
-  padding: 1.5rem;
+  font-weight: 700;
+  padding: 1.6rem 0 1.6rem 4rem;
+}
+
+table tr.row-user {
+  border-top: 1px solid #4A808C;
 }
 
 table tr:nth-child(odd) {
-  background: var(--bg-color);
-  border: 1px solid #4A808C;
+  background: #030B0D;
 }
 
 table tr:nth-child(even) {
-  background: var(--bg-color);
-  border: 1px solid #4A808C;
+  background: #06181C;
 }
 
 table th:first-child {
-  border-top-left-radius: 0.4rem;
+  border-top-left-radius: 1.2rem;
 }
 
 table th:last-child {
-  border-top-right-radius: 0.4rem;
+  border-top-right-radius: 1.2rem;
+}
+
+table td:last-child {
+  border-bottom-right-radius: 1.2rem;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 1.2rem;
 }
 
 td.user {
@@ -159,18 +186,22 @@ td.user a {
   text-decoration: none;
 }
 
+td.user span {
+  font-weight: 400;
+}
+
 td.user a p {
   font-weight: 600;
 }
 
 table td {
-  padding: 1.5rem;
+  padding: 1.6rem 0 1.6rem 4rem;
   text-align: left;
 }
 
 button.remove {
   border: none;
   background: none;
-  color: red;
+  color: #F75A68;
   cursor: pointer;
 }

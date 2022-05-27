@@ -4,8 +4,7 @@ import { GitHubUser } from "./GitHubUser.js"
 export class Favorites {
   constructor(root) {
     this.root = document.querySelector(root)
-    this.load()
-    
+    this.load()    
   }
 
   load() {
@@ -34,6 +33,7 @@ export class Favorites {
       this.entries = [user, ...this.entries]
       this.update()
       this.save()
+      this.noitems()
 
     } catch(error) {
       alert(error.message)
@@ -46,6 +46,7 @@ export class Favorites {
     this.entries = filteredEntries
     this.update()
     this.save()
+    this.noitems()
   }
   
 }
@@ -57,9 +58,17 @@ export class FavoritesView extends Favorites {
 
     this.tbody = this.root.querySelector('table tbody')
 
-
+    this.noitems()
     this.update()
     this.onadd()
+  }
+
+  noitems() {
+    if (this.tbody.length == 0) {
+      document.querySelector(".white-space").classList.remove("hide")
+    } else {
+      document.querySelector(".white-space").classList.add("hide")
+    }
   }
 
   onadd()  {
@@ -91,7 +100,7 @@ export class FavoritesView extends Favorites {
       row.querySelector('.user img').alt = `Imagem de ${user.name}`
       row.querySelector('.user p').textContent = user.name
       row.querySelector('.user a').href = `https://github.com/${user.login}`
-      row.querySelector('.user span').textContent = user.login
+      row.querySelector('.user span').textContent = `/${user.login}`
       row.querySelector('.repositories').textContent = user.public_repos
       row.querySelector('.followers').textContent = user.followers
 
@@ -110,6 +119,7 @@ export class FavoritesView extends Favorites {
 
   createRow() {
     const tr = document.createElement('tr')
+    tr.classList.add('row-user')
     tr.innerHTML = `
           <td class="user">
             <img src="https://github.com/maykbrito.png" alt="imagem de maykbrito">
@@ -125,7 +135,7 @@ export class FavoritesView extends Favorites {
             9589
           </td>
           <td>
-            <button class="remove">&times;</button>
+            <button class="remove">Remover</button>
           </td>
     `
     return tr

@@ -152,7 +152,7 @@ table tbody {
   display: flex;
   flex-direction: column;
   overflow-y: overlay;
-  max-height: 52.9rem;
+  max-height: 53rem;
 }
 
 table thead {
@@ -270,4 +270,22 @@ button.remove {
   color: #F75A68;
   cursor: pointer;
   padding-right: 4rem;
+}
+
+div.white-space {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 53rem;
+  gap: 6rem;
+  background: #030B0D;
+  width: 100%;
+}
+
+div.white-space p {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 2.5rem;
+  color: #4E5455;
 }
